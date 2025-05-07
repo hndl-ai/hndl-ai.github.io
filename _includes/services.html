@@ -1,42 +1,87 @@
 <section id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">At Your Service</h2>
-                <hr class="primary">
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">User Comments</h2>
+        <hr class="primary" />
+      </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                    <h3>Sturdy Templates</h3>
-                    <p class="text-muted">Our templates are updated regularly so they don't break.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                    <h3>Ready to Ship</h3>
-                    <p class="text-muted">You can use this theme as is, or you can make changes!</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                    <h3>Up to Date</h3>
-                    <p class="text-muted">We update dependencies to keep things fresh.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                    <h3>Made with Love</h3>
-                    <p class="text-muted">You have to make your websites with love these days!</p>
-                </div>
-            </div>
-        </div>
+  </div>
+  <div id="scrollContainer" class="scroll-container container-fluid">
+    <div class="scroll-spacer"></div>
+    <div class="col-lg-4 col-md-5 text-center review-card">
+      <span class="card-arrow left" onclick="scrollToCard(this.parentElement)"
+        >&larr;</span
+      >
+      <span class="card-arrow right" onclick="scrollToCard(this.parentElement)"
+        >&rarr;</span
+      >
+      <!-- <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i> -->
+      <img
+        class="avatar"
+        src="img/founders/docusign_founder.png"
+        alt="DocuSign Founder"
+        height="200px"
+      />
+      <img
+        class="logo"
+        src="img/founders/docusign_logo.png"
+        alt="DocuSign Logo"
+      />
+      <p class="text-muted">
+        #1 most important tool for <b>SaaS Founders</b>
+        <br />
+        <i> - John Rossant, Founder of DocuSign</i>
+      </p>
     </div>
+    <div class="col-lg-4 col-md-5 text-center review-card">
+      <span class="card-arrow left" onclick="scrollToCard(this.parentElement)"
+        >&larr;</span
+      >
+      <span class="card-arrow right" onclick="scrollToCard(this.parentElement)"
+        >&rarr;</span
+      >
+
+      <!-- <i -->
+      <!--   class="fa fa-4x fa-paper-plane wow bounceIn text-primary" -->
+      <!--   data-wow-delay=".1s" -->
+      <!-- ></i> -->
+      <img
+        class="avatar"
+        src="img/founders/snyk_founder.png"
+        alt="Snyk Founder"
+        height="200px"
+      />
+      <img class="logo" src="img/founders/snyk_logo.png" alt="Snyk Logo" />
+      <p class="text-muted">
+        <b>Every SaaS Founder</b> should use HNDL <br />
+        <i> - Harvey Browne, Founder of Snyk</i>
+      </p>
+    </div>
+    <div class="col-lg-4 col-md-5 text-center review-card">
+      <span class="card-arrow left" onclick="scrollToCard(this.parentElement)"
+        >&larr;</span
+      >
+      <span class="card-arrow right" onclick="scrollToCard(this.parentElement)"
+        >&rarr;</span
+      >
+      <img
+        class="avatar"
+        src="img/founders/no_logo_founder.png"
+        alt="Snyk Founder"
+        height="200px"
+      />
+      <!-- <img class="logo" src="img/founders/snyk_logo.png" alt="No Logo" /> -->
+      <h3>Made with Love</h3>
+      <p class="text-muted">
+        You have to make your websites with love these days!
+      </p>
+    </div>
+    <div class="scroll-spacer"></div>
+  </div>
+  <div class="dots">
+    <span class="dot" onclick="scrollToCardByIndex(0)"></span>
+    <span class="dot" onclick="scrollToCardByIndex(1)"></span>
+    <span class="dot" onclick="scrollToCardByIndex(2)"></span>
+  </div>
 </section>

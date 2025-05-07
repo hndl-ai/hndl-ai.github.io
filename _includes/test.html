@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      .scroll-container {
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding: 1rem;
+        width: 100vw;
+        box-sizing: border-box;
+        -ms-overflow-style: none; /* IE/Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .scroll-container::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+      }
+      .review-card {
+        flex-shrink: 0;
+        width: 300px;
+        scroll-snap-align: center;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .review-card:hover {
+        transform: scale(1.02);
+      }
+      .dots {
+        text-align: center;
+        margin: 1rem 0;
+      }
+      .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        border-radius: 50%;
+        background: #bbb;
+        transition: background 0.3s;
+      }
+      .dot.active {
+        background: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="scrollContainer" class="scroll-container">
+      <div class="review-card">Review 1</div>
+      <div class="review-card">Review 2</div>
+      <div class="review-card">Review 3</div>
+    </div>
+
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <script>
+      const container = document.getElementById("scrollContainer");
+      const dots = document.querySelectorAll(".dot");
+      const cards = container.querySelectorAll(".review-card");
+
+      function updateDots() {
+        let closest = 0;
+        let minDist = Infinity;
+
+        cards.forEach((card, i) => {
+          const rect = card.getBoundingClientRect();
+          const center = window.innerWidth / 2;
+          const dist = Math.abs(rect.left + rect.width / 2 - center);
+          if (dist < minDist) {
+            minDist = dist;
+            closest = i;
+          }
+        });
+
+        dots.forEach((dot) => dot.classList.remove("active"));
+        if (dots[closest]) dots[closest].classList.add("active");
+      }
+
+      container.addEventListener("scroll", () => {
+        requestAnimationFrame(updateDots);
+      });
+
+      cards.forEach((card, i) => {
+        card.addEventListener("click", () => {
+          const offset =
+            card.offsetLeft + card.offsetWidth / 2 - container.offsetWidth / 2;
+          container.scrollTo({ left: offset, behavior: "smooth" });
+        });
+      });
+
+      window.addEventListener("resize", updateDots);
+    </script>
+  </body>
+</html>
