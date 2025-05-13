@@ -367,7 +367,7 @@ img.logo {
   margin: 0 auto;
 
   .portfolio-box-caption {
-    background-color: rgba(77, 77, 77, 0.8); 
+    background: rgba($theme-primary, 0.8); 
     color: white; /* Ensure text is readable */
     display: flex; /* Use flexbox for centering */
     align-items: center; /* Vertically center text */
@@ -377,8 +377,8 @@ img.logo {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 1; /* Always visible */
-    transition: none; /* Remove hover effect */
+    opacity: 0.6; 
+    @include transition-all;
 
     .portfolio-box-caption-content {
       width: 80%;
@@ -409,7 +409,12 @@ img.logo {
   }
 
   &:hover {
+    background: rgba(77, 77, 77, 0.8);
+    opacity: 1; 
+    transition: background-color 0.3s ease; /* Smooth transition */
+    
     .portfolio-box-caption {
+      background: rgba(77, 77, 77, 0.8);
       opacity: 1;
     }
   }
