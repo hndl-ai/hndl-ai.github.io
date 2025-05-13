@@ -367,19 +367,21 @@ img.logo {
   margin: 0 auto;
 
   .portfolio-box-caption {
-    color: white;
-    opacity: 0;
-    display: block;
-    background: rgba($theme-primary, .9);
+    background-color: rgba(77, 77, 77, 0.8); 
+    color: white; /* Ensure text is readable */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
     position: absolute;
-    bottom: 0;
-    text-align: center;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    @include transition-all;
+    opacity: 1; /* Always visible */
+    transition: none; /* Remove hover effect */
 
     .portfolio-box-caption-content {
-      width: 100%;
+      width: 80%;
       text-align: center;
       position: absolute;
       top: 50%;
@@ -394,11 +396,14 @@ img.logo {
       .project-category {
         text-transform: uppercase;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 18px;
       }
 
       .project-name {
-        font-size: 18px;
+        color: rgba(white, .85);
+        font-size: 18px; /* Slightly smaller text */
+        text-align: justify; /* Justify the text */
+        line-height: 1.3; /* Add some line spacing for readability */
       }
     }
   }
@@ -413,11 +418,13 @@ img.logo {
     .portfolio-box-caption {
       .portfolio-box-caption-content {
         .project-category {
-          font-size: 16px;
+          font-size: 18px;
         }
 
         .project-name {
-          font-size: 22px;
+          color: rgba(white, .85);
+          font-size: 18px;
+          line-height: 1.3; /* Add some line spacing for readability */
         }
       }
     }
@@ -443,6 +450,9 @@ img.logo {
 // Button Styles
 .btn-default {
   @include button-variant($theme-dark, white, white);
+
+  &:hover {@include button-variant($theme-dark, #BBBBBB, $theme-dark);
+  }
 }
 
 .btn-primary {
