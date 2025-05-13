@@ -369,9 +369,9 @@ img.logo {
   .portfolio-box-caption {
     background: rgba($theme-primary, 0.8); 
     color: white; /* Ensure text is readable */
-    display: flex; /* Use flexbox for centering */
-    align-items: center; /* Vertically center text */
-    justify-content: center; /* Horizontally center text */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
     position: absolute;
     top: 0;
     left: 0;
@@ -401,9 +401,9 @@ img.logo {
 
       .project-name {
         color: rgba(white, .85);
-        font-size: 18px; /* Slightly smaller text */
-        text-align: justify; /* Justify the text */
-        line-height: 1.3; /* Add some line spacing for readability */
+        font-size: 18px; 
+        text-align: justify; 
+        line-height: 1.3; 
       }
     }
   }
@@ -411,7 +411,7 @@ img.logo {
   &:hover {
     background: rgba(77, 77, 77, 0.8);
     opacity: 1; 
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease; 
     
     .portfolio-box-caption {
       background: rgba(77, 77, 77, 0.8);
@@ -454,7 +454,7 @@ img.logo {
 
 // Button Styles
 .btn-default {
-  @include button-variant($theme-dark, white, white);
+  @include button-variant($theme-dark, #f8f8f8, #f8f8f8);
 
   &:hover {@include button-variant($theme-dark, #BBBBBB, $theme-dark);
   }
